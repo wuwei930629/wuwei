@@ -27,7 +27,7 @@ from
 			count_detail as detail_count,
 			fee
 		from
-			tmp_text_wuwei_category_data
+			tmp.tmp_text_wuwei_category_data
 	)t1
 	left join
 	(
@@ -36,7 +36,7 @@ from
 			sum(count_detail) as detail_hour,
 			sum(fee) as fee_hour
 		from
-			tmp_text_wuwei_category_data
+			tmp.tmp_text_wuwei_category_data
 		group by
 			time
 	)t2
@@ -56,7 +56,7 @@ left join
 			sum(count_detail) detail_category,
 			sum(fee) as fee_category
 		from
-			tmp_text_wuwei_category_data
+			tmp.tmp_text_wuwei_category_data
 		group by
 			category
 	)t3
@@ -67,7 +67,7 @@ left join
  			sum(count_detail) detail,
 			sum(fee) as pay_fee
  		from
- 			tmp_text_wuwei_category_data
+ 			tmp.tmp_text_wuwei_category_data
 	)t4
 	on t3.tab=t4.tab
 )p2
